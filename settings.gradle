@@ -1,0 +1,4 @@
+rootProject.name = 'multi-tenant-jpa-repository'
+
+include 'library'
+include 'demo'

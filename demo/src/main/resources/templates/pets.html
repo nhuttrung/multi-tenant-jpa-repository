@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+  <title>My Pets</title>
+</head>
+<body>
+  <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+
+  <h2 th:inline="text">My Pets</h2>
+  <table>
+    <tr th:each="pet : ${pets}">
+      <td th:text="${pet.name}"></td>
+    </tr>
+  </table>
+
+  <h2 th:inline="text">Sign out and sign in with another user to see how it works</h2>
+  <form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+  </form>
+</body>
+</html>
